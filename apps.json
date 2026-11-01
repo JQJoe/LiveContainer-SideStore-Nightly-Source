@@ -1,6 +1,7 @@
 {
   "name": "LiveContainer + SideStore Nightly Only",
   "identifier": "community.livecontainer.sidestore.nightlyonly",
+  "sourceURL": "https://raw.githubusercontent.com/JQJoe/LiveContainer-SideStore-Nightly-Source/main/apps.json",
   "subtitle": "Official combined nightly IPA only",
   "description": "Tracks only official combined LiveContainer+SideStore Nightly assets. No stable fallback.",
   "apps": [
@@ -11,6 +12,10 @@
       "subtitle": "Combined nightly build",
       "localizedDescription": "Unofficial source index pointing to the official combined Nightly IPA.",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/LiveContainer/Assets.xcassets/AppIcon.appiconset/Icon-1024.png",
+      "version": "3.8.11",
+      "versionDate": "2026-10-17",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
+      "size": 24155286,
       "versions": [
         {
           "version": "3.8.11",
