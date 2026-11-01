@@ -1,28 +1,42 @@
-name: Update combined Nightly source
+name: Update official combined Nightly source
+
 on:
-  schedule:
-    - cron: '15 */6 * * *'
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
 permissions:
   contents: write
+
+concurrency:
+  group: nightly-source-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Update source if combined Nightly IPA exists
+      - name: Generate apps.json from official Nightly asset
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update.py
-      - name: Commit changes
+      - name: Commit only when source changed
         run: |
+          if git diff --quiet -- apps.json; then
+            echo 'apps.json unchanged'
+            exit 0
+          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add apps.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Update combined Nightly source'
-            git push
-          fi
+          git commit -m 'chore: update official combined Nightly source'
+          git push
