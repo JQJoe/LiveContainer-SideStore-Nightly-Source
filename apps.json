@@ -13,17 +13,17 @@
       "subtitle": "Official combined Nightly IPA",
       "localizedDescription": "Community-maintained index of the official LiveContainer + SideStore Nightly release. No stable fallback.",
       "iconURL": "https://github.com/LiveContainer.png",
-      "version": "3.8.12",
-      "versionDate": "2026-11-07",
+      "version": "3.8.13",
+      "versionDate": "2026-11-08",
       "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-      "size": 23733566,
+      "size": 23752778,
       "versions": [
         {
-          "version": "3.8.12",
-          "date": "2026-11-07",
+          "version": "3.8.13",
+          "date": "2026-11-08",
           "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 23733566,
-          "localizedDescription": "Official combined Nightly • build 3.8.12 • 2026-11-07 • nightly-721356721-2026-11-07T17:12:13Z"
+          "size": 23752778,
+          "localizedDescription": "Official combined Nightly • build 3.8.13 • 2026-11-08 • nightly-723459921-2026-11-08T09:11:53Z"
         }
       ]
     }
